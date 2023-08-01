@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h1>
+    <strong>TODO list</strong>
+    <a href="{% url 'tasks:task_create' %}" class="btn btn-primary link-to-page">
+        Add task
+    </a>
+</h1>
+<br>
+
+{% for task in object_list %}
+<br>
+<h4>
+    <div style="display: inline-block;">
+        {{ task.content }}
+
+
+        {% if task.performance %}
+        <span class="text-success" style="display: inline-block;">
+            Done
+        </span>
+        {% else %}
+        <span class="text-danger" style="display: inline-block;">
+            Not done
+        </span>
+        {% endif %}
+    </div>
+    {% if task.performance %}
+    <form action="{% url 'tasks:cancel_task' task.id %}" method="post">
+        {% csrf_token %}
+        <button href="{% url 'tasks:cancel_task' task.id %}" class="btn btn-secondary link-to-page">
+            Undo
+        </button>
+    </form>
+    {% else %}
+    <form action="{% url 'tasks:complete_task' task.id %}" method="post">
+        {% csrf_token %}
+        <button href="{% url 'tasks:complete_task' task.id %}" class="btn btn-success link-to-page">
+            Complete
+        </button>
+    </form>
+    {% endif %}
+</h4>
+<div style="display: inline-block"><strong>Created:
+        {{ task.created }}
+    </strong>
+</div>
+{% if task.deadline %}
+<span style="display: inline-block; color: darkred">
+    Deadline {{ task.deadline }}
+</span>
+{% endif %}
+<h4 class="text-muted">Tags:
+    {% for tag in task.tags.all %}
+    {{ tag.title }}
+    {% endfor %}
+    <a href="{% url 'tasks:task_update' task.id %}">Update</a>
+    <a href="{% url 'tasks:task_delete' task.id %}">Delete</a>
+</h4>
+<hr>
+{% endfor %}
+
+{% endblock %}
