@@ -106,6 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CSRF_TRUSTED_ORIGINS = ["https://8000-bogdanfsd-todolist-51kfu186o94.ws-eu102.gitpod.io"]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
