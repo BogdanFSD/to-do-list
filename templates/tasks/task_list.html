@@ -17,7 +17,7 @@
         {{ task.content }}
 
 
-        {% if task.performance %}
+        {% if task.is_done %}
         <span class="text-success" style="display: inline-block;">
             Done
         </span>
@@ -27,7 +27,7 @@
         </span>
         {% endif %}
     </div>
-    {% if task.performance %}
+    {% if task.is_done %}
     <form action="{% url 'tasks:cancel_task' task.id %}" method="post">
         {% csrf_token %}
         <button href="{% url 'tasks:cancel_task' task.id %}" class="btn btn-secondary link-to-page">

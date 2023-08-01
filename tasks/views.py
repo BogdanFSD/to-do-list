@@ -55,7 +55,7 @@ class CompleteTaskView(View):
     def post(self, request, *args, **kwargs):
         task_id = self.kwargs["pk"]
         task = get_object_or_404(Task, id=task_id)
-        task.performance = True
+        task.is_done = True
         task.save()
 
         return HttpResponseRedirect(reverse_lazy("tasks:task_list"))
@@ -65,7 +65,7 @@ class CancelTaskView(View):
     def post(self, request, *args, **kwargs):
         task_id = self.kwargs["pk"]
         task = get_object_or_404(Task, id=task_id)
-        task.performance = False
+        task.is_done = False
         task.save()
 
         return HttpResponseRedirect(reverse_lazy("tasks:task_list"))

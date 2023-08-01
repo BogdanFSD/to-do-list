@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-r%(9j=7+77&%f!jmu$o6s)axii1qf77b8-g6_2$t_h^ymn%s*_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["8000-bogdanfsd-todolist-51kfu186o94.ws-eu102.gitpod.io"]
+ALLOWED_HOSTS = ["8000-bogdanfsd-todolist-51kfu186o94.ws-eu102.gitpod.io", "8000-bogdanfsd-todolist-326kw633oz7.ws-eu102.gitpod.io"]
 
 
 # Application definition
@@ -76,6 +76,10 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
+CSRF_TRUSTED_ORIGINS = ["https://8000-bogdanfsd-todolist-326kw633oz7.ws-eu102.gitpod.io"]
+
+
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
@@ -107,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-bogdanfsd-todolist-51kfu186o94.ws-eu102.gitpod.io"
+    "https://8000-bogdanfsd-todolist-326kw633oz7.ws-eu102.gitpod.io"
 ]
 
 
