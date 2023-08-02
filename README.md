@@ -46,3 +46,27 @@ pip install -r requirements.txt
 ```shell
 python manage.py runserver
 ```
+
+### Main page 
+![image](images/hometodo.jpg)
+
+### Create Task 
+![image](images/createtodo.jpg)
+
+### Update Task 
+![image](images/updatetodo.jpg)
+
+### Delte Task 
+![image](images/deletetodo.jpg)
+
+### Tags Page 
+![image](images/tagstodo.jpg)
+
+### Create tag 
+![image](images/createtagtodo.jpg)
+
+### Update Tag 
+![image](images/updatetag.jpg)
+
+### Delete Tag 
+![image](images/deletetag.jpg)
